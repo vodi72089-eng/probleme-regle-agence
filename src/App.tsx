@@ -102,10 +102,8 @@ function FloatingWhatsApp() {
         className={show ? "pointer-events-auto block" : "pointer-events-none block"}
       >
         <span className="pr-comic-button">
-          <span className="font-anton text-[12px] tracking-[0.08em] uppercase">
-            Régler mon problème
-          </span>
-          <span className="font-sans text-[11px] font-bold tracking-[0.1em]">↗</span>
+          <span className="pr-comic-label">Régler mon problème</span>
+          <span className="pr-comic-arrow" aria-hidden="true">↗</span>
         </span>
       </a>
     </motion.div>

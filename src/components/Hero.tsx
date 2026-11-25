@@ -179,7 +179,7 @@ export default function Hero() {
               className="absolute -top-4 -right-2 z-30 sm:-top-10 sm:-right-8"
             >
               <p className="font-hand text-[26px] leading-none text-ink sm:text-[38px]">
-                Create Bigger
+                create par ebrillam
               </p>
               <svg
                 width="70"

@@ -1,6 +1,4 @@
-import appImg from "@/assets/project-app.png";
-import autoImg from "@/assets/project-auto.png";
-import webImg from "@/assets/project-web.png";
+import ProjectDemo from "@/components/ProjectDemos";
 import {
   CurtainReveal,
   MagneticButton,
@@ -16,7 +14,6 @@ const PROJECTS = [
     tag: "Site web",
     title: "Boutique en ligne",
     year: "2024",
-    img: webImg,
     note: "E-commerce • Paiement • Livraison",
   },
   {
@@ -24,7 +21,6 @@ const PROJECTS = [
     tag: "App",
     title: "Application mobile",
     year: "2025",
-    img: appImg,
     note: "Gestion • Stock • Rapports",
   },
   {
@@ -32,7 +28,6 @@ const PROJECTS = [
     tag: "Auto",
     title: "Automatisation WhatsApp",
     year: "2025",
-    img: autoImg,
     note: "Chatbot • CRM • Dashboard",
   },
 ];
@@ -75,23 +70,12 @@ export default function Projects() {
         <div className="mt-12 grid grid-cols-1 gap-8 sm:mt-16 md:grid-cols-3 md:gap-6 lg:gap-8">
           {PROJECTS.map((p, i) => (
             <Reveal key={p.id} delay={i * 0.1} y={44} className="group">
-              <a
-                href="https://wa.me/243835113424"
-                target="_blank"
-                rel="noreferrer"
-                data-cursor="view"
-                className="block"
-              >
+              <div className="block">
                 <CurtainReveal tone="ink">
                   <div className="relative overflow-hidden border border-ink/15 bg-cream-2">
-                    <ZoomImage
-                      src={p.img}
-                      alt={p.title}
-                      className="aspect-[4/5] w-full"
-                      from={1.14}
-                      hoverZoom
-                      parallax={18}
-                    />
+                    <div className="aspect-[4/5] w-full">
+                      <ProjectDemo index={i} />
+                    </div>
                     {/* index + year overlay */}
                   <div className="absolute top-0 right-0 left-0 flex items-start justify-between p-4">
                     <span className="font-anton text-[11px] tracking-[0.14em] text-cream mix-blend-difference">
@@ -102,11 +86,18 @@ export default function Projects() {
                     </span>
                   </div>
                   {/* arrow */}
-                  <div className="absolute right-4 bottom-4 flex size-12 items-center justify-center rounded-full border border-cream/70 bg-cream/10 backdrop-blur-[2px] transition-colors duration-500 group-hover:border-cream group-hover:bg-red">
+                  <a
+                    href="https://wa.me/243835113424"
+                    target="_blank"
+                    rel="noreferrer"
+                    data-cursor="view"
+                    aria-label={`Discuter du projet ${p.title}`}
+                    className="absolute right-4 bottom-4 flex size-12 items-center justify-center rounded-full border border-cream/70 bg-cream/10 backdrop-blur-[2px] transition-colors duration-500 group-hover:border-cream group-hover:bg-red"
+                  >
                     <span className="text-lg text-cream transition-transform duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:rotate-45">
                       →
                     </span>
-                  </div>
+                  </a>
                   {/* red wash on hover */}
                   <span
                     aria-hidden
@@ -124,9 +115,15 @@ export default function Projects() {
                     <p className="font-sans text-[9px] font-bold tracking-[0.24em] uppercase opacity-45 transition-opacity duration-500 group-hover:opacity-100">
                       {p.id} — {p.tag}
                     </p>
-                    <h3 className="mt-1.5 font-display text-[16px] leading-tight transition-transform duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1.5 sm:text-[18px]">
+                    <a
+                      href="https://wa.me/243835113424"
+                      target="_blank"
+                      rel="noreferrer"
+                      data-cursor="view"
+                      className="mt-1.5 inline-block font-display text-[16px] leading-tight transition-transform duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1.5 sm:text-[18px]"
+                    >
                       {p.title}
-                    </h3>
+                    </a>
                     <p className="mt-1 font-sans text-[10px] tracking-[0.12em] uppercase opacity-40">
                       {p.note}
                     </p>
@@ -135,7 +132,7 @@ export default function Projects() {
                     0{i + 1}
                   </span>
                 </div>
-              </a>
+              </div>
             </Reveal>
           ))}
         </div>
