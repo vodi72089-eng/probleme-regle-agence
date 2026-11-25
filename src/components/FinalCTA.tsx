@@ -75,7 +75,7 @@ export default function FinalCTA() {
               </h2>
 
               <Reveal delay={0.15} y={20} className="mt-9 flex flex-wrap items-center justify-center gap-3">
-                <MagneticButton pulse href="https://wa.me/243835113424">
+                <MagneticButton variant="comic" href="https://wa.me/243835113424">
                   Écrire sur WhatsApp
                 </MagneticButton>
                 <MagneticButton variant="outline" onClick={() => scrollToId("#work")}>
