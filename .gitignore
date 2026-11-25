@@ -1,1 +1,5 @@
-/* FETCH FAILED 404 */
+node_modules/
+dist/
+.env*.local
+*.log
+.DS_Store
