@@ -2,20 +2,26 @@
 
 import { motion } from "framer-motion";
 import { useState, type FormEvent } from "react";
+import robeImg from "@/assets/products/robe-lin.png";
+import vesteImg from "@/assets/products/veste.png";
+import sacImg from "@/assets/products/sac.png";
+import chemiseImg from "@/assets/products/chemise.png";
+import manteauImg from "@/assets/products/manteau.png";
+import pantalonImg from "@/assets/products/pantalon.png";
 
 /* ------------------------------------------------------------------ */
 /* 001 — Mini boutique dans un ordinateur portable                     */
 /* ------------------------------------------------------------------ */
 
-type ShopItem = { id: number; name: string; price: number; cat: string; bg: string };
+type ShopItem = { id: number; name: string; price: number; cat: string; img: string };
 
 const SHOP_ITEMS: ShopItem[] = [
-  { id: 1, name: "Robe lin", price: 89, cat: "Femme", bg: "linear-gradient(135deg,#D9C7B0,#9C8165)" },
-  { id: 2, name: "Veste", price: 149, cat: "Femme", bg: "linear-gradient(135deg,#2A2A2A,#5C5C5C)" },
-  { id: 3, name: "Sac cuir", price: 119, cat: "Accessoires", bg: "linear-gradient(135deg,#C0563B,#7A3224)" },
-  { id: 4, name: "Chemise", price: 69, cat: "Homme", bg: "linear-gradient(135deg,#7E9BB5,#3F5A73)" },
-  { id: 5, name: "Manteau", price: 189, cat: "Homme", bg: "linear-gradient(135deg,#5B4A3B,#241D17)" },
-  { id: 6, name: "Pantalon", price: 99, cat: "Femme", bg: "linear-gradient(135deg,#CBB79C,#8B7458)" },
+  { id: 1, name: "Robe lin", price: 89, cat: "Femme", img: robeImg },
+  { id: 2, name: "Veste", price: 149, cat: "Femme", img: vesteImg },
+  { id: 3, name: "Sac cuir", price: 119, cat: "Accessoires", img: sacImg },
+  { id: 4, name: "Chemise", price: 69, cat: "Homme", img: chemiseImg },
+  { id: 5, name: "Manteau", price: 189, cat: "Homme", img: manteauImg },
+  { id: 6, name: "Pantalon", price: 99, cat: "Femme", img: pantalonImg },
 ];
 
 function ShopDemo() {
@@ -69,7 +75,13 @@ function ShopDemo() {
               <div className="grid flex-1 grid-cols-3 gap-1.5 overflow-y-auto">
                 {shown.map((item) => (
                   <div key={item.id} className="flex min-h-0 flex-col">
-                    <div className="flex-1 rounded-sm" style={{ background: item.bg }} />
+                    <div className="relative flex-1 overflow-hidden rounded-sm bg-cream-2">
+                      <img
+                        src={item.img}
+                        alt={item.name}
+                        className="absolute inset-0 h-full w-full object-cover"
+                      />
+                    </div>
                     <span className="mt-0.5 truncate font-sans text-[6px] font-semibold">{item.name}</span>
                     <span className="flex items-center justify-between font-sans text-[6px]">
                       {item.price} $
