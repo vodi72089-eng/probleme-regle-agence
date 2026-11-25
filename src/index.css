@@ -190,6 +190,92 @@ html.lenis body {
   }
 }
 
+/* From Uiverse.io by adamgiebl - https://uiverse.io/adamgiebl/good-mouse-67
+   MIT License, Copyright (c) adamgiebl (Adam Giebl) */
+.pr-neu-button {
+  background-color: #e0e0e0;
+  border-radius: 50px;
+  box-shadow:
+    inset 4px 4px 10px #bcbcbc,
+    inset -4px -4px 10px #ffffff;
+  color: #4d4d4d;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 15px 40px;
+  transition: all 0.2s ease-in-out;
+  border: 2px solid rgb(206, 206, 206);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.pr-neu-button > span {
+  position: relative;
+  z-index: 1;
+}
+
+.pr-neu-button:hover,
+.pr-neu-button:focus {
+  box-shadow:
+    inset 2px 2px 5px #bcbcbc,
+    inset -2px -2px 5px #ffffff,
+    2px 2px 5px #bcbcbc,
+    -2px -2px 5px #ffffff;
+}
+
+.pr-neu-button:focus-visible {
+  outline: 2px solid var(--color-red);
+  outline-offset: 4px;
+}
+
+/* Comic button */
+.pr-comic-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #ff5252;
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-shadow: 5px 5px 0px #000;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-family: var(--font-anton);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.pr-comic-button:hover {
+  background-color: #fff;
+  color: #ff5252;
+  border: 2px solid #ff5252;
+  box-shadow: 5px 5px 0px #ff5252;
+}
+
+.pr-comic-button:active {
+  background-color: #fcf414;
+  box-shadow: none;
+  transform: translateY(4px);
+}
+
+@media (max-width: 640px) {
+  .pr-neu-button {
+    font-size: 13px;
+    padding: 13px 24px;
+  }
+  .pr-comic-button {
+    font-size: 14px;
+    padding: 9px 14px;
+    box-shadow: 3px 3px 0px #000;
+    border-radius: 8px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

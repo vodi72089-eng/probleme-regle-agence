@@ -14,9 +14,9 @@ const SERVICES = [
 ];
 
 const STATS = [
-  { to: 120, suffix: "+", label: "Projets livrés" },
-  { to: 68, suffix: "", label: "Clients accompagnés" },
-  { to: 6, suffix: " ans", label: "D'expérience" },
+  { to: 24, suffix: "", label: "Projets livrés" },
+  { to: 10, suffix: "", label: "Clients accompagnés" },
+  { to: 3, suffix: " ans", label: "D'expérience" },
 ];
 
 function Counter({ to, suffix }: { to: number; suffix?: string }) {
@@ -44,7 +44,7 @@ function Counter({ to, suffix }: { to: number; suffix?: string }) {
 
 export default function AboutServices() {
   return (
-    <section id="about" className="relative border-b border-ink/12 bg-cream">
+    <section id="about" className="relative scroll-mt-24 border-b border-ink/12 bg-cream">
       <div className="mx-auto w-full max-w-[1600px] px-5 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 divide-y divide-ink/12 lg:grid-cols-3 lg:divide-x lg:divide-y-0">
           {/* ---------------- COL 1 : ABOUT ---------------- */}

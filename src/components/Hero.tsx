@@ -87,7 +87,7 @@ export default function Hero() {
             </Reveal>
 
             <Reveal delay={1.3} y={22} className="flex flex-wrap items-center gap-3">
-              <MagneticButton pulse onClick={() => scrollToId("#contact")}>
+              <MagneticButton variant="neu" onClick={() => scrollToId("#contact")}>
                 Démarrer maintenant
               </MagneticButton>
               <MagneticButton variant="outline" onClick={() => scrollToId("#work")}>

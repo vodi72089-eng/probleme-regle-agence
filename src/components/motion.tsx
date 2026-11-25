@@ -103,7 +103,7 @@ export function SplitLetters({
 /* ------------------------------------------------------------------ */
 /* Magnetic button — follows the cursor, swaps black -> red on hover    */
 /* ------------------------------------------------------------------ */
-type BtnVariant = "red" | "ink" | "outline";
+type BtnVariant = "red" | "ink" | "outline" | "neu";
 
 export function MagneticButton({
   children,
@@ -147,12 +147,18 @@ export function MagneticButton({
     ink: "bg-ink text-cream hover:bg-red",
     outline:
       "border border-ink bg-transparent text-ink hover:border-red hover:bg-red hover:text-cream",
+    neu: "",
   };
 
+  const base =
+    variant === "neu"
+      ? "pr-neu-button group relative inline-flex items-center gap-3"
+      : "group relative inline-flex origin-center items-center gap-3 overflow-hidden rounded-full px-7 py-4 font-sans text-[11px] font-bold tracking-[0.18em] uppercase transition-all duration-500 active:scale-[0.96] sm:px-9 sm:py-[18px] sm:text-xs";
+
   const cls = cn(
-    "group relative inline-flex origin-center items-center gap-3 overflow-hidden rounded-full px-7 py-4 font-sans text-[11px] font-bold tracking-[0.18em] uppercase transition-all duration-500 active:scale-[0.96] sm:px-9 sm:py-[18px] sm:text-xs",
+    base,
     skin[variant],
-    pulse && "animate-pulse-red",
+    variant !== "neu" && pulse && "animate-pulse-red",
     className,
   );
 

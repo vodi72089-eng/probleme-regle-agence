@@ -101,7 +101,7 @@ function FloatingWhatsApp() {
         aria-hidden={!show}
         className={show ? "pointer-events-auto block" : "pointer-events-none block"}
       >
-        <span className="animate-pulse-red flex items-center gap-3 rounded-full bg-red px-4 py-3.5 text-cream shadow-[0_18px_40px_-18px_rgba(255,30,30,0.9)] sm:px-5">
+        <span className="pr-comic-button">
           <span className="font-anton text-[12px] tracking-[0.08em] uppercase">
             Régler mon problème
           </span>
